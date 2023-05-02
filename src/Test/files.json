@@ -1,0 +1,52 @@
+{
+  "covidandroidnocough": [
+    [
+      "breaths_0c4dx8rU5G_1586982341272.wav",
+      "cough_0c4dx8rU5G_1586982341281.wav"
+    ],
+    [
+      "breaths_0OWWZZ7muU_1588233167836.wav",
+      "cough_0OWWZZ7muU_1588233167879.wav"
+    ]
+  ],
+  "covidandroidwithcough": [
+    [
+      "breaths_2DDMc0SESm_1586853740963.wav",
+      "cough_2DDMc0SESm_1586853741017.wav"
+    ],
+    [
+      "breaths_2VpSwpTRqb_1587694471975.wav",
+      "cough_2VpSwpTRqb_1587694471993.wav"
+    ]
+  ],
+  "healthyandroidnosymp": [
+    [
+      "breaths_1fxxVyop57_1589091470099.wav",
+      "cough_1fxxVyop57_1589091470148.wav"
+    ],
+    [
+      "breaths_2pYxTRaHvl_1586931806240.wav",
+      "cough_2pYxTRaHvl_1586931806256.wav"
+    ]
+  ],
+  "healthyandroidwithcough": [
+    [
+      "breaths_9me0RMtVww_1586943699298.wav",
+      "cough_9me0RMtVww_1586943699308.wav"
+    ],
+    [
+      "breaths_H2GP8Yggv7_1586971403939.wav",
+      "cough_H2GP8Yggv7_1586971403956.wav"
+    ]
+  ],
+  "asthmaandroidwithcough": [
+    [
+      "breaths_2aSAZx0fOr_1586937599109.wav",
+      "cough_2aSAZx0fOr_1587385420788.wav"
+    ],
+    [
+      "breaths_bkvNji2HDB_1586978468956.wav",
+      "cough_bkvNji2HDB_1586978468979.wav"
+    ]
+  ]
+}
