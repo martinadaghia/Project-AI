@@ -41,25 +41,63 @@ def extract_features(audio, sr):
     zc = librosa.feature.zero_crossing_rate(y=audio)
     print('zero crossing:' + str(np.shape(zc[0])) + ' ' + str(np.shape(zc)))
 
+#la funzione mfcc restituisce matrici che stenderemo e ne calcoleremo gli indicatori statistici
     mfcc = librosa.feature.mfcc(y=audio, sr=sr)
+    mfcc_feat= extract_mfcc(mfcc)
+
     mfcc_delta = librosa.feature.delta(mfcc)
+    mfcc_feat_d = extract_mfcc(mfcc)
+
     mfcc_delta2 = librosa.feature.delta(mfcc, order=2)
+    mfcc_feat_d2 = extract_mfcc(mfcc)
+
     print('mfcc shape', np.shape(mfcc))
     print('mfcc_delta:', np.shape(mfcc_delta))
     print('mfcc_delta2:', np.shape(mfcc_delta2))
 
-    # return {
-    #     'mean': str(np.mean(array)),
-    #     'std_dev': str(np.std(array)),
-    #     'min': str(np.min(array)),
-    #     'max': str(np.max(array)),
-    #     'e_norm': str(np.linalg.norm(array)),
-    #     'median': str(np.median(array)),
-    #     'skew': str(skew(array, axis=None)),
-    #     'kurt': str(kurtosis(array, axis=None)),
-    #     'perc25': str(np.percentile(array, 25)),
-    #     'perc75': str(np.percentile(array, 75))
-    # }
+    return {
+        'duration': str(duration),
+        'times': times.tolist(),
+        'onset_frames': onset_frames.tolist(),
+        'tempo': str(tempo[0]),
+        'period': str(period),
+        'rmse': rmse.tolist(),
+        'sc': sc[0].tolist(),
+        'rolloff': rolloff[0].tolist(),
+        'zc': zc[0].tolist(),
+        'mfcc': mfcc_feat,
+        'mfcc_d': mfcc_feat_d,
+        'mfcc_d2': mfcc_feat_d2,
+    }
+
+
+def extract_mfcc(mfcc):
+    mfcc_features = []
+    #prendiamo i primi 10 array e per ogni array ne calcoliamo gli indicatori statistici
+    for array in mfcc[0:10]:
+        #scarto interquartile
+        q3, q1 = np.percentile(array, [75,25])
+
+        mfcc_features.append(
+                 dict({
+                    'mean': str(np.mean(array)),
+                    'std_dev': str(np.std(array)),
+                    'min': str(np.min(array)),
+                    'max': str(np.max(array)),
+                    #'e_norm': str(np.linalg.norm(array)),
+                    'median': str(np.median(array)),
+                    'skew': str(skew(array, axis=None)),
+                    'kurt': str(kurtosis(array, axis=None)),
+                    'perc25': str(q1),
+                    'perc75': str(q3),
+                    'root_mean_sqr': str(np.sqrt(np.mean(array**2))),
+                    'iqr': str(q3-q1)
+                }),
+
+            )
+
+
+    return mfcc_features
 
 
 def is_covid(dir_name):
@@ -133,8 +171,8 @@ def load_data():
             # Calcola spettrogramma di Mel
             #mel_cough = get_mel_spect(audio_cough, sr, n_mel=128)
 
-    # pp = pprint.PrettyPrinter(indent=4)
-    # pp.pprint(dataset_val)
+    pp = pprint.PrettyPrinter(indent=4)
+    pp.pprint(dataset_val)
     dict_ = dict(dataset_val)
     json_ = json.dumps(dict_, indent=4)
     # print('json', json_)
@@ -173,5 +211,3 @@ load_data()
 #bisogna vedere come performa il modello con le feauture nuove ma soprattutto bisogna capire come dare al nostro modello non dei valori scalari che definiscono vettori #bensì dei vettori stessi. In primis bisogna prendere i primi 13 array della funzione mfcc e poi calcolarne (per questi 13 vettori) i 10 valori statistici: 'mean', #'std_dev', #'min', 'max', 'e_norm', 'median', 'skew', 'kurt', 'perc25', 'perc75'.  
 # fatto questo dovremmo avere abbastanza features rilevanti per avere una giusta quantità di dati per ricavare la nostra ipotesi e capire ulteriori cose.
 #STAY TUNED HOES!
-
-#ciao
