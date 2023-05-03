@@ -173,3 +173,5 @@ load_data()
 #bisogna vedere come performa il modello con le feauture nuove ma soprattutto bisogna capire come dare al nostro modello non dei valori scalari che definiscono vettori #bensì dei vettori stessi. In primis bisogna prendere i primi 13 array della funzione mfcc e poi calcolarne (per questi 13 vettori) i 10 valori statistici: 'mean', #'std_dev', #'min', 'max', 'e_norm', 'median', 'skew', 'kurt', 'perc25', 'perc75'.  
 # fatto questo dovremmo avere abbastanza features rilevanti per avere una giusta quantità di dati per ricavare la nostra ipotesi e capire ulteriori cose.
 #STAY TUNED HOES!
+
+#ciao
