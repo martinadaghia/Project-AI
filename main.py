@@ -30,21 +30,21 @@ def extract_features(audio, sr):
     print('period:', period)
 
     rmse = librosa.feature.rms(y=audio)[0]
-    print('rmse:', rmse)
+    print('rmse:', np.shape(rmse))
 
     sc = librosa.feature.spectral_centroid(y=audio)
-    print('spectral centroid:', sc[0])
+    print('spectral centroid:' + str(np.shape(sc[0])) + ' ' + str(np.shape(sc)))
 
     rolloff = librosa.feature.spectral_rolloff(y=audio, sr=sr, roll_percent=0.85)
-    print('rolloff:', rolloff[0])
+    print('rolloff:' + str(np.shape(rolloff[0])) + ' ' + str(np.shape(rolloff)))
 
     zc = librosa.feature.zero_crossing_rate(y=audio)
-    print('zero crossing:', zc[0])
+    print('zero crossing:' + str(np.shape(zc[0])) + ' ' + str(np.shape(zc)))
 
     mfcc = librosa.feature.mfcc(y=audio, sr=sr)
     mfcc_delta = librosa.feature.delta(mfcc)
     mfcc_delta2 = librosa.feature.delta(mfcc, order=2)
-    print('mfcc length', np.shape(len(mfcc)) + ' is ' + str(mfcc) + ' each component is long: ' + str(len(mfcc[0])))
+    print('mfcc shape', np.shape(mfcc))
     print('mfcc_delta:', np.shape(mfcc_delta))
     print('mfcc_delta2:', np.shape(mfcc_delta2))
 
