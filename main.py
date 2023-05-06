@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 import pprint
+import re
 
 from scipy.stats import kurtosis, skew
 
@@ -16,88 +17,111 @@ DIR_NAME = 'src/Test/'
 def extract_features(audio, sr):
     onset_env = librosa.onset.onset_strength(y=audio, sr=sr)
 
-    duration = librosa.get_duration(y=audio)
-    print('duration', duration)
+    trim, index = librosa.effects.trim(y=audio)
+    duration = librosa.get_duration(y=trim)
+    # print('duration', duration)
 
-    times = librosa.times_like(onset_env, sr=sr)
+    # times = librosa.times_like(onset_env, sr=sr)
     onset_frames = librosa.onset.onset_detect(onset_envelope=onset_env, sr=sr)
-    print('onset_frames:', onset_frames)
+
+    # print('onset_frames:', onset_frames)
 
     tempo = librosa.beat.tempo(onset_envelope=onset_env, sr=sr)
-    print('tempo:', tempo[0])
+    # print('tempo:', tempo[0])
 
     period = np.argmax(librosa.stft(audio))
-    print('period:', period)
+    # print('period:', period)
 
     rmse = librosa.feature.rms(y=audio)[0]
-    print('rmse:', np.shape(rmse))
+    rmse_stat = extract_statistical_features(rmse, 'rmse')
+    # print('rmse:', np.shape(rmse))
 
     sc = librosa.feature.spectral_centroid(y=audio)
-    print('spectral centroid:' + str(np.shape(sc[0])) + ' ' + str(np.shape(sc)))
+    sc_stat = extract_statistical_features(sc, 'sc')
+    # print('spectral centroid:' + str(np.shape(sc[0])) + ' ' + str(np.shape(sc)))
 
-    rolloff = librosa.feature.spectral_rolloff(y=audio, sr=sr, roll_percent=0.85)
-    print('rolloff:' + str(np.shape(rolloff[0])) + ' ' + str(np.shape(rolloff)))
+    roll_off = librosa.feature.spectral_rolloff(y=audio, sr=sr, roll_percent=0.85)
+    roll_off_stat = extract_statistical_features(roll_off, 'roll_off')
+    # print('roll_off:' + str(np.shape(roll_off[0])) + ' ' + str(np.shape(roll_off)))
 
     zc = librosa.feature.zero_crossing_rate(y=audio)
-    print('zero crossing:' + str(np.shape(zc[0])) + ' ' + str(np.shape(zc)))
+    zc_stat = extract_statistical_features(zc, 'zc')
+    # print('zero crossing:' + str(np.shape(zc[0])) + ' ' + str(np.shape(zc)))
 
-#la funzione mfcc restituisce matrici che stenderemo e ne calcoleremo gli indicatori statistici
+    # la funzione mfcc restituisce matrici che stenderemo e ne calcoleremo gli indicatori statistici
     mfcc = librosa.feature.mfcc(y=audio, sr=sr)
-    mfcc_feat= extract_mfcc(mfcc)
+    mfcc_feat = extract_statistical_features(mfcc, 'mfcc')
 
     mfcc_delta = librosa.feature.delta(mfcc)
-    mfcc_feat_d = extract_mfcc(mfcc)
+    mfcc_feat_d = extract_statistical_features(mfcc_delta, 'mfcc_d')
 
     mfcc_delta2 = librosa.feature.delta(mfcc, order=2)
-    mfcc_feat_d2 = extract_mfcc(mfcc)
+    mfcc_feat_d2 = extract_statistical_features(mfcc_delta2, 'mfcc_d2')
 
-    print('mfcc shape', np.shape(mfcc))
-    print('mfcc_delta:', np.shape(mfcc_delta))
-    print('mfcc_delta2:', np.shape(mfcc_delta2))
+    # print('mfcc shape', np.shape(mfcc))
+    # print('mfcc_delta:', np.shape(mfcc_delta))
+    # print('mfcc_delta2:', np.shape(mfcc_delta2))
 
-    return {
-        'duration': str(duration),
-        'times': times.tolist(),
-        'onset_frames': onset_frames.tolist(),
-        'tempo': str(tempo[0]),
-        'period': str(period),
-        'rmse': rmse.tolist(),
-        'sc': sc[0].tolist(),
-        'rolloff': rolloff[0].tolist(),
-        'zc': zc[0].tolist(),
+    features = {
+        'duration': float(duration),
+        'tempo': float(tempo[0]),
+        'period': float(period),
+        'onset': len(onset_frames),
+        'rmse': rmse_stat,
+        'sc': sc_stat,
+        'roll_off': roll_off_stat,
+        'zc': zc_stat,
         'mfcc': mfcc_feat,
         'mfcc_d': mfcc_feat_d,
         'mfcc_d2': mfcc_feat_d2,
     }
 
-
-def extract_mfcc(mfcc):
-    mfcc_features = []
-    #prendiamo i primi 10 array e per ogni array ne calcoliamo gli indicatori statistici
-    for array in mfcc[0:10]:
-        #scarto interquartile
-        q3, q1 = np.percentile(array, [75,25])
-
-        mfcc_features.append(
-                 dict({
-                    'mean': str(np.mean(array)),
-                    'std_dev': str(np.std(array)),
-                    'min': str(np.min(array)),
-                    'max': str(np.max(array)),
-                    #'e_norm': str(np.linalg.norm(array)),
-                    'median': str(np.median(array)),
-                    'skew': str(skew(array, axis=None)),
-                    'kurt': str(kurtosis(array, axis=None)),
-                    'perc25': str(q1),
-                    'perc75': str(q3),
-                    'root_mean_sqr': str(np.sqrt(np.mean(array**2))),
-                    'iqr': str(q3-q1)
-                }),
-
-            )
+    # This piece of code expand these arrays from
+    # 'name': { 'stat_1': stat_1, ..., 'stat_n': stat_n }
+    # to
+    # 'name_stat_1': stat_1, ...,'name_stat_n': stat_n
+    for name in ['rmse', 'sc', 'roll_off', 'zc']:
+        for key, value in features[name].items():
+            # Split the original key name into separate parts
+            parts = re.findall(r'[a-zA-Z]+|\d+', key)
+            # Build the new key name by joining the parts with underscores
+            new_key = "_".join([name]+parts)
+            print(new_key)
+            # Add the new key and value to the output dictionary
+            features[new_key] = value
+        del features[name]
+    return features
 
 
-    return mfcc_features
+def extract_statistical_features(vec, name='None'):
+    # prendiamo i primi 13 array e per ogni variante di mfcc
+    if name == 'mfcc' or name == 'mfcc_d' or name == 'mfcc_d2':
+        vec_features = []
+        # ne calcoliamo gli indicatori statistici
+        for array in vec[0:12]:
+            # scarto interquartile
+            vec_features.append(statistic_obj(array))
+        return vec_features
+    else:
+        return statistic_obj(vec)
+
+
+def statistic_obj(array):
+    q3, q1 = np.percentile(array, [75, 25])
+    return dict({
+                'mean': float(np.mean(array)),
+                'std_dev': float(np.std(array)),
+                'min': float(np.min(array)),
+                'max': float(np.max(array)),
+                # 'e_norm': str(np.linalg.norm(array)),
+                'median': float(np.median(array)),
+                'skew': float(skew(array, axis=None)),
+                'kurt': float(kurtosis(array, axis=None)),
+                'perc25': float(q1),
+                'perc75': float(q3),
+                'root_mean_sqr': float(np.sqrt(np.mean(array**2))),
+                'iqr': float(q3-q1)
+            })
 
 
 def is_covid(dir_name):
@@ -172,7 +196,7 @@ def load_data():
             #mel_cough = get_mel_spect(audio_cough, sr, n_mel=128)
 
     pp = pprint.PrettyPrinter(indent=4)
-    pp.pprint(dataset_val)
+    # pp.pprint(dataset_val)
     dict_ = dict(dataset_val)
     json_ = json.dumps(dict_, indent=4)
     # print('json', json_)
