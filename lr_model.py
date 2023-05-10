@@ -20,7 +20,7 @@ def train_and_test(data, labels, randomness, test_size):
     y_pred = model.predict(x_test)
 
     # Valuta le prestazioni del modello
-    accuracy_lr = accuracy_score(y_test, y_pred)
-    print('LR Accuracy:', accuracy_lr)
+    accuracy_lr = accuracy_score(y_test, y_pred) * 100
+    print('LR Accuracy: %.2f' % accuracy_lr + '%\n')
 
 

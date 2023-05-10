@@ -1,6 +1,7 @@
 from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+import numpy as np
 
 
 def train_and_test(data, labels, randomness, test_size):
@@ -15,5 +16,6 @@ def train_and_test(data, labels, randomness, test_size):
     y_pred = clf.predict(x_test)
 
     # Valuta le prestazioni del modello
-    accuracy_svm = accuracy_score(y_test, y_pred)
-    print('SVM Accuracy:', accuracy_svm)
+    accuracy_svm = accuracy_score(y_test, y_pred) * 100
+    print('SVM Accuracy: %.2f' % accuracy_svm + '%\n')
+    print(str(np.floor(np.mean(y_test) * 100)) + '% of ones in y_test')

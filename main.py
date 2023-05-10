@@ -24,7 +24,7 @@ for element in dataset:
     data.append(array)
     labels.append(element['covid'])
 print('\nEnd.')
-print('Each element has ' + str(len(dataset[0]['audio_features'])) + ' features ')
+print('Each element has ' + str(len(dataset[0]['audio_features'])) + ' features\n')
 init_models(data_list=data, labels_list=labels, randomness=0, test_size=0.2)
 
 
