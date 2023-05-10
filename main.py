@@ -8,8 +8,13 @@ import load_dataset
 
 DIR_NAME = 'src/Audio/'
 
-# load_dataset.load_data(DIR_NAME)
 
+def init_models(data_list, labels_list, randomness, test_size):
+    lr_model.train_and_test(data_list, labels_list, randomness, test_size)
+    svm_model.train_and_test(data_list, labels_list, randomness, test_size)
+
+
+# load_dataset.load_data(DIR_NAME)
 with open('./data.json', 'r') as f:
     dataset = json.load(f)
 data = []
@@ -20,6 +25,6 @@ for element in dataset:
     labels.append(element['covid'])
 print('\nEnd.')
 print('Each element has ' + str(len(dataset[0]['audio_features'])) + ' features ')
-lr_model.train_and_test(data, labels)
-svm_model.train_and_test(data, labels)
+init_models(data_list=data, labels_list=labels, randomness=0, test_size=0.2)
+
 

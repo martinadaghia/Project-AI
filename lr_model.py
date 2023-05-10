@@ -4,16 +4,16 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
 
-def train_and_test(data, labels):
+def train_and_test(data, labels, randomness, test_size):
     # Crea un'istanza del trasformatore e adattalo ai dati
     scaler = StandardScaler()
     scaled_data = scaler.fit_transform(data)
 
     # Dividi i dati in set di addestramento e di test
-    x_train, x_test, y_train, y_test = train_test_split(scaled_data, labels, test_size=0.2)
+    x_train, x_test, y_train, y_test = train_test_split(scaled_data, labels, test_size=test_size)
 
     # Crea e addestra il modello di regressione logistica
-    model = LogisticRegression()
+    model = LogisticRegression(random_state=randomness)
     model.fit(x_train, y_train)
 
     # Effettua le previsioni sul set di test
