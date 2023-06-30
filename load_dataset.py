@@ -65,8 +65,8 @@ def extract_features(audio, sr, dir_name, category_name):
     full_label = get_full_label(dir_name)
     category = get_category(category_name)
     features = {
-        'full_label': full_label,
-        'category': category,
+        #'full_label': full_label,
+        #'category': category,
         'duration': float(duration),
         'tempo': float(tempo[0]),
         'period': float(period),
