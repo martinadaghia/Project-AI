@@ -10,7 +10,6 @@ import lr_model
 import seaborn as sns
 import load_dataset
 from sklearn.feature_selection  import mutual_info_classif
-
 DIR_NAME = 'src/Audio/'
 
 
@@ -38,8 +37,15 @@ feat_imp.plot(kind='barh')
 #plt.yticks(pd.DataFrame(data).columns, dataset[0]['audio_features'].keys(), rotation='horizontal')
 #plt.show()
 
+# Ottieni gli indici degli elementi in ordine decrescente di importanza
+indices = np.argsort(feat_imp)[::-1]
+
+# Seleziona i primi 20 indici
+top_indices = indices[:50]
+
 #!=0 per togliere solo quelle inutili
-feat_imp = feat_imp[feat_imp > 0.1]
+#feat_imp = feat_imp[feat_imp >= 0.03]
+feat_imp = feat_imp[top_indices]
 plot_labels_new = []
 plot_labels_new.append(list(dataset[0]['audio_features'].keys()))
 labels_new=np.array(plot_labels_new)
