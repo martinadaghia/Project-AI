@@ -67,24 +67,24 @@ def extract_features(audio, sr, dir_name, category_name):
     features = {
         #'full_label': full_label,
         #'category': category,
-        'duration': float(duration),
-        'tempo': float(tempo[0]),
-        'period': float(period),
-        'onset': len(onset_frames),
-        'rmse': rmse_stat,
-        'sc': sc_stat,
-        'roll_off': roll_off_stat,
-        'zc': zc_stat,
-        'mfcc': mfcc_feat,
-        'mfcc_d': mfcc_feat_d,
-        'mfcc_d2': mfcc_feat_d2,
+        category_name + 'duration': float(duration),
+        category_name + 'tempo': float(tempo[0]),
+        category_name + 'period': float(period),
+        category_name + 'onset': len(onset_frames),
+        category_name + 'rmse': rmse_stat,
+        category_name + 'sc': sc_stat,
+        category_name + 'roll_off': roll_off_stat,
+        category_name + 'zc': zc_stat,
+        category_name + 'mfcc': mfcc_feat,
+        category_name + 'mfcc_d': mfcc_feat_d,
+        category_name + 'mfcc_d2': mfcc_feat_d2,
     }
 
     # This piece of code expand these arrays from
     # 'name': { 'stat_1': stat_1, ..., 'stat_n': stat_n }
     # to
     # 'name_stat_1': stat_1, ...,'name_stat_n': stat_n
-    for name in ['rmse', 'sc', 'roll_off', 'zc']:
+    for name in [category_name + 'rmse', category_name + 'sc', category_name + 'roll_off', category_name + 'zc']:
         for key, value in features[name].items():
             # Split the original key name into separate parts
             parts = re.findall(r'[a-zA-Z]+|\d+', key)
@@ -95,7 +95,7 @@ def extract_features(audio, sr, dir_name, category_name):
         del features[name]
 
     # This code perform the flattening of the mfcc-like matrices
-    for name in ['mfcc', 'mfcc_d', 'mfcc_d2']:
+    for name in [category_name + 'mfcc', category_name + 'mfcc_d', category_name + 'mfcc_d2']:
         for i, element in enumerate(features[name]):
             for key in element:
                 new_key = name+'_'+str(i)+'_'+key
@@ -183,12 +183,12 @@ def load_data(parent_directory):
             # BREATH
             audio_breath, breath_sr = librosa.core.load(parent_directory + dir_name + '/breath/' + filelist[0])
             audio_breath, _ = librosa.effects.trim(audio_breath)
-
-            dataset.append({
-                'filename': filelist[0],
-                'covid': covid,
-                'audio_features': extract_features(audio_breath, breath_sr, dir_name, 'breath'),
-            })
+            breath_features = extract_features(audio_breath, breath_sr, dir_name, 'breath_')
+           # dataset.append({
+           #     'filename': filelist[0],
+           #     'covid': covid,
+           #     'audio_features': extract_features(audio_breath, breath_sr, dir_name, 'breath'),
+           # })
 
             # Calcola spettrogramma di Mel
             # mel_breath = get_mel_spect(audio_breath, sr, n_mel=128)
@@ -196,11 +196,16 @@ def load_data(parent_directory):
             # COUGH
             audio_cough, cough_sr = librosa.core.load(parent_directory + dir_name + '/cough/' + filelist[1])
             audio_cough, _ = librosa.effects.trim(audio_cough)
+            cough_features = extract_features(audio_cough, cough_sr, dir_name, 'cough_')
+
+            cough_and_breath = breath_features | cough_features
 
             dataset.append({
-                'filename': filelist[1],
+                'filename_breath': filelist[0],
+                'filename_cough': filelist[1],
                 'covid': covid,
-                'audio_features': extract_features(audio_cough, cough_sr, dir_name, 'cough'),
+                'audio_features': cough_and_breath
+                ,
             })
 
             # Calcola la STFT e il valore assoluto degli spettri di potenza

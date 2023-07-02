@@ -27,11 +27,16 @@ for element in dataset:
     array = np.array(list(element['audio_features'].values()))
     data.append(array)
     labels.append(element['covid'])
-print('Each element has ' + str(len(dataset[0]['audio_features'])) + ' features\n')
-init_models(data_list=data, labels_list=labels, randomness=10, test_size=0.2)
 
-importances = mutual_info_classif(data, labels)
-feat_imp = pd.Series(importances, pd.DataFrame(data).columns[0:len(pd.DataFrame(data))-1])
+
+data = np.array(data)  # Converti la lista di array in un array bidimensionale
+
+
+print('Each of ' + str(len(data)) + ' element has ' + str(len(dataset[0]['audio_features'])) + ' features\n')
+init_models(data_list=data, labels_list=labels, randomness=10, test_size=0.2)
+print(str(pd.DataFrame(data).shape))
+importance = mutual_info_classif(data, labels)
+feat_imp = pd.Series(importance, pd.DataFrame(data).columns)
 feat_imp.plot(kind='barh')
 
 #plt.yticks(pd.DataFrame(data).columns, dataset[0]['audio_features'].keys(), rotation='horizontal')
@@ -41,7 +46,7 @@ feat_imp.plot(kind='barh')
 indices = np.argsort(feat_imp)[::-1]
 
 # Seleziona i primi 20 indici
-top_indices = indices[:50]
+top_indices = indices[:100]
 
 #!=0 per togliere solo quelle inutili
 #feat_imp = feat_imp[feat_imp >= 0.03]
