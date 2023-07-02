@@ -10,32 +10,32 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-def train_and_test(data, labels, randomness, test_size):
+def train_and_test(data, labels, randomness, test_size, threshold):
     # Crea un'istanza del trasformatore e adattalo ai dati
     scaler = StandardScaler()
     scaled_data = scaler.fit_transform(data)
 
     # Divisione dei dati in set di addestramento e di test
-    x_train, x_test, y_train, y_test = train_test_split(data, labels, test_size=test_size)
+    x_train, x_test, y_train, y_test = train_test_split(scaled_data, labels, test_size=test_size)
 
     # Training SVM
-    clf = svm.SVC(random_state=randomness)
+    clf = svm.SVC(probability=True, random_state=randomness)
     clf.fit(x_train, y_train)
 
     # Effettua le previsioni sul set di test
-    y_pred = clf.predict(x_test)
-
-
+    y_pred_proba = clf.predict_proba(x_test)
+    print(y_pred_proba)
+    y_pred = np.where(y_pred_proba[:, 1] > threshold, 1, 0)
 
     # Valuta le prestazioni del modello
-    #accuracy_svm = accuracy_score(y_test, y_pred) * 100
-    #print('SVM Accuracy: %.2f' % accuracy_svm + '%\n')
+    # accuracy_svm = accuracy_score(y_test, y_pred) * 100
+    # print('SVM Accuracy: %.2f' % accuracy_svm + '%\n')
     print('SVM')
     # Calcola il classification report
     report = classification_report(y_test, y_pred)
     print(report)
 
-    #print(str(np.floor(np.mean(y_test) * 100)) + '% of ones in y_test')
+    # print(str(np.floor(np.mean(y_test) * 100)) + '% of ones in y_test')
     # Calcola la matrice di confusione
     confusion_mtx = confusion_matrix(y_test, y_pred)
     # Creazione di un dataframe dalla matrice di confusione

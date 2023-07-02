@@ -1,3 +1,4 @@
+import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
@@ -9,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-def train_and_test(data, labels, randomness, test_size):
+def train_and_test(data, labels, randomness, test_size, threshold):
     # Crea un'istanza del trasformatore e adattalo ai dati
     scaler = StandardScaler()
     scaled_data = scaler.fit_transform(data)
@@ -22,14 +23,15 @@ def train_and_test(data, labels, randomness, test_size):
     model.fit(x_train, y_train)
 
     # Effettua le previsioni sul set di test
-    y_pred = model.predict(x_test)
-
+    y_pred_proba = model.predict_proba(x_test)
+    y_pred = np.where(y_pred_proba[:, 1] > threshold, 1, 0)
     # Valuta le prestazioni del modello
-    #accuracy_lr = accuracy_score(y_test, y_pred) * 100
-    #print('LR Accuracy: %.2f' % accuracy_lr + '%\n')
+    # accuracy_lr = accuracy_score(y_test, y_pred) * 100
+    # print('LR Accuracy: %.2f' % accuracy_lr + '%\n')
     print('LR')
     # Calcola il classification report
     report = classification_report(y_test, y_pred)
+
     print(report)
 
     # Calcola la matrice di confusione
