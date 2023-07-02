@@ -20,8 +20,7 @@ NUM_FEATURES = 600
 # NUMBER OF TESTS TO RUN
 NUM_TESTS = 50
 # SEED FOR SPLITTING
-# TOP SEEDS: 10 0
-SEED = 1
+SEED = 592
 
 
 PERCENT = 25
@@ -44,9 +43,9 @@ def print_mean_report(results, model):
     mean_precision = np.mean(precision_list)
     mean_recall = np.mean(recall_list)
     mean_f1_score = np.mean(f1_score_list)
-    print('Mean Precision '+model+': %.2f' % mean_precision)
-    print('Mean Recall '+model+': %.2f' % mean_recall)
-    print('Mean F1-score '+model+': %.2f' % mean_f1_score)
+    print('Mean Precision ' + model + ': %.2f' % mean_precision)
+    print('Mean Recall ' + model + ': %.2f' % mean_recall)
+    print('Mean F1-score ' + model + ': %.2f' % mean_f1_score)
 
 
 def print_report(report, model):
