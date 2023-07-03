@@ -14,13 +14,14 @@ from sklearn.feature_selection import mutual_info_classif, SelectPercentile
 DIR_NAME = 'src/Audio/'
 
 # IS COVID PROBABILITY THRESHOLD
-THRESHOLD = 0.30
+THRESHOLD = 0.20
 # NUMBER OF TOP FEATURES TO SELECT
 NUM_FEATURES = 600
 # NUMBER OF TESTS TO RUN
 NUM_TESTS = 50
 # SEED FOR SPLITTING
-SEED = 592
+# TOP SEEDS: 10 0 9999 9999999 592
+SEED = 0
 
 
 PERCENT = 25
@@ -53,28 +54,33 @@ def print_report(report, model):
 
 
 def init_models(data_list, labels_list, randomness, test_size, threshold, seed):
-    lr_report, lr_mtx = lr_model.train_and_test(data_list, labels_list, randomness, test_size, threshold, seed, False)
-    svm_report, svm_mtx = svm_model.train_and_test(data_list, labels_list, randomness, test_size, threshold, seed, False)
+    sns.set(rc={'figure.figsize': (11.7, 8.27)})
+    print("start " + str(int(THRESHOLD % 0.1)+1))
+    for i in range(0, 3):
+        actual_threshold = threshold + ((i-1)*0.1)
+        print("Trying with " + str(actual_threshold) + " tolerance")
+        lr_report, lr_mtx = lr_model.train_and_test(data_list, labels_list, randomness, test_size, actual_threshold, seed, False)
+        svm_report, svm_mtx = svm_model.train_and_test(data_list, labels_list, randomness, test_size, actual_threshold, seed, False)
 
-    print_report(lr_report, 'LR')
-    print_report(svm_report, 'SVM')
+        print_report(lr_report, 'LR')
+        print_report(svm_report, 'SVM')
 
-    lr_confusion_df = pd.DataFrame(lr_mtx, index=['Actual 0', 'Actual 1'], columns=['Predicted 0', 'Predicted 1'])
-    # Creazione della heatmap della matrice di confusione
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(lr_confusion_df, annot=True, fmt='d', cmap='Blues')
-    plt.title('Matrice di Confusione LR')
-    plt.xlabel('Valore Predetto')
-    plt.ylabel('Valore Effettivo')
+        lr_confusion_df = pd.DataFrame(lr_mtx, index=['Actual 0', 'Actual 1'], columns=['Predicted 0', 'Predicted 1'])
+        # Creazione della heatmap della matrice di confusione
+        plt.figure(figsize=(8, 6))
+        sns.heatmap(lr_confusion_df, annot=True, fmt='d', cmap='Blues')
+        plt.title('Matrice di Confusione LR threshold ' + str(int(actual_threshold*100)) + '%')
+        plt.xlabel('Valore Predetto')
+        plt.ylabel('Valore Effettivo')
 
-    svm_confusion_df = pd.DataFrame(svm_mtx, index=['Actual 0', 'Actual 1'], columns=['Predicted 0', 'Predicted 1'])
-    # Creazione della heatmap della matrice di confusione
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(svm_confusion_df, annot=True, fmt='d', cmap='Blues')
-    plt.title('Matrice di Confusione SVM')
-    plt.xlabel('Valore Predetto')
-    plt.ylabel('Valore Effettivo')
-    plt.show()
+        svm_confusion_df = pd.DataFrame(svm_mtx, index=['Actual 0', 'Actual 1'], columns=['Predicted 0', 'Predicted 1'])
+        # Creazione della heatmap della matrice di confusione
+        plt.figure(figsize=(8, 6))
+        sns.heatmap(svm_confusion_df, annot=True, fmt='d', cmap='Blues')
+        plt.title('Matrice di Confusione SVM threshold ' + str(actual_threshold))
+        plt.xlabel('Valore Predetto')
+        plt.ylabel('Valore Effettivo')
+        plt.show()
 
 
 def init_models_iter(data_list, labels_list, randomness, test_size, threshold):
