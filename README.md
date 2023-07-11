@@ -1,2 +1,0 @@
-# ProgettoAI
-Medical GRM
