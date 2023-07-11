@@ -2,11 +2,12 @@ from sklearn.preprocessing import StandardScaler
 from sklearn import svm
 from sklearn.model_selection import train_test_split
 import numpy as np
-#from codecarbon import track_emissions
+from codecarbon import track_emissions
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 
-#@track_emissions()
+
+@track_emissions()
 def train_and_test(data, labels, randomness, test_size, threshold, seed, dict):
     # Crea un'istanza del trasformatore e adattalo ai dati
     scaler = StandardScaler()
@@ -24,16 +25,10 @@ def train_and_test(data, labels, randomness, test_size, threshold, seed, dict):
     # print(y_pred_proba)
     y_pred = np.where(y_pred_proba[:, 1] > threshold, 1, 0)
 
-    # Valuta le prestazioni del modello
-    # accuracy_svm = accuracy_score(y_test, y_pred) * 100
-    # print('SVM Accuracy: %.2f' % accuracy_svm + '%\n')
-    # print('SVM')
-
     # Calcola il classification report
     report = classification_report(y_test, y_pred, output_dict=dict)
     # print(report)
 
-    # print(str(np.floor(np.mean(y_test) * 100)) + '% of ones in y_test')
     # Calcola la matrice di confusione
     confusion_mtx = confusion_matrix(y_test, y_pred)
 

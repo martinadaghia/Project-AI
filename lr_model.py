@@ -2,11 +2,12 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
-#from codecarbon import track_emissions
+from codecarbon import track_emissions
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
-#@track_emissions()
+
+@track_emissions()
 def train_and_test(data, labels, randomness, test_size, threshold, seed, dict):
     # Crea un'istanza del trasformatore e adattalo ai dati
     scaler = StandardScaler()
@@ -22,14 +23,9 @@ def train_and_test(data, labels, randomness, test_size, threshold, seed, dict):
     # Effettua le previsioni sul set di test
     y_pred_proba = model.predict_proba(x_test)
     y_pred = np.where(y_pred_proba[:, 1] > threshold, 1, 0)
-    # Valuta le prestazioni del modello
-    # accuracy_lr = accuracy_score(y_test, y_pred) * 100
-    # print('LR Accuracy: %.2f' % accuracy_lr + '%\n')
-    # print('LR')
 
     # Calcola il classification report
     report = classification_report(y_test, y_pred, output_dict=dict)
-
     # print(report)
 
     # Calcola la matrice di confusione
