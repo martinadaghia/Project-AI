@@ -26,6 +26,14 @@ def print_report(report, model):
 
 
 def boxplots(names):
+    # File contentente il dataset caratterizzato dalle sole 5 features migliori
+    with open(r"src\5_feat.json", "r") as f1:
+        arr_feat = json.load(f1)
+
+    # File contenente solo la target degli elementi del dataset
+    with open(r"src\5_y.json", "r") as f2:
+        arr_target = json.load(f2)
+
     dtf = pd.DataFrame(arr_feat, columns=[str(x) for x in range(len(arr_feat[0]))])
     lst_cols = list(dtf.columns)
     dtf["target"] = arr_target
@@ -36,7 +44,7 @@ def boxplots(names):
         plot = sns.boxplot(data=dtf, x="target", y=str_col)
         plt.title(names[i-1])
         plt.tight_layout()
-        plt.show()
+        # plt.show()
 
 
 def init_models(data_list, labels_list, randomness, test_size, threshold, seed):
@@ -66,7 +74,7 @@ def init_models(data_list, labels_list, randomness, test_size, threshold, seed):
         plt.title('Matrice di Confusione SVM threshold ' + str(int(actual_threshold*100)) + '%')
         plt.xlabel('Valore Predetto')
         plt.ylabel('Valore Effettivo')
-        plt.show()
+        # plt.show()
 
 
 # load_dataset.load_data(DIR_NAME)
@@ -117,7 +125,6 @@ reduced_data = []
 for element_features in data:
     element_new_features = [element_features[index] for index in important_features_indexes]
     reduced_data.append(element_new_features)
-print(reduced_data[: 5])
 boxplots(labels_new)
 print("Reduced data results")
 

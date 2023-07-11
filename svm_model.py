@@ -23,6 +23,8 @@ def train_and_test(data, labels, randomness, test_size, threshold, seed, dict):
     # Effettua le previsioni sul set di test
     y_pred_proba = clf.predict_proba(x_test)
     # print(y_pred_proba)
+
+    # Passaggio dalla probabilità alla categorizzazione
     y_pred = np.where(y_pred_proba[:, 1] > threshold, 1, 0)
 
     # Calcola il classification report
