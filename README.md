@@ -386,55 +386,55 @@ Le features di un audio sono quindi elementi di questo tipo:
 
 audio\_features: {
 
-duration: scalar,
-
-...,
-
-onset: scalar,
-
-rmse: {
-
-mean: scalar,
-
-...,
-
-iqr: scalar
-
-},
-
-...,
-
-zc: {...},
-
-mfcc: [
-
-{
-
-mean: scalar,
-
-...
-
-iqr: scalar
-
-}, ..., {
-
-mean: scalar, ...,
-
-iqr: scalar
-
-}
-
-],
-
-mfcc\_d: [
-
-...
-
-], mfcc\_d2: [
-
-...
-
-]
+    duration: scalar,
+    
+    ...,
+    
+    onset: scalar,
+    
+    rmse: {
+    
+    mean: scalar,
+    
+    ...,
+    
+    iqr: scalar
+    
+    },
+    
+    ...,
+    
+    zc: {...},
+    
+    mfcc: [
+    
+        {
+        
+        mean: scalar,
+        
+        ...
+        
+        iqr: scalar
+        
+        }, ..., {
+        
+        mean: scalar, ...,
+        
+        iqr: scalar
+        
+        }
+    
+    ],
+    
+    mfcc\_d: [
+    
+        ...
+    
+    ], mfcc\_d2: [
+    
+        ...
+    
+    ]
 
 }
 
@@ -444,29 +444,31 @@ La soluzione che abbiamo impiegato per uniformare i nostri oggetti all’interno
 
 - Le coppie chiave-oggetto rmse: {
 
-"mean": scalar, ...,
-
-"iqr": scalar
-
-}     diventano
-
-"rmse\_mean": scalar, ...
-
-"rmse\_iqr": scalar,
+    "mean": scalar, ...,
+    
+        "iqr": scalar
+    
+    }
+  diventano
+    
+    "rmse\_mean": scalar, ...
+    
+    "rmse\_iqr": scalar,
 
 - Le coppie chiave-vettore, come il vettore mfcc formato da 13 elementi:
 
 mfcc: [
 
-{
+    {
+    
+        "mean": scalar, ...,
+        
+        "iqr": scalar,
+    
+    }
 
-"mean": scalar, ...,
-
-"iqr": scalar,
-
-}
-
-]       diventano:
+]       
+diventano:
 
 "mfcc\_0\_mean": scalar, ...
 
@@ -486,21 +488,21 @@ Ultimato questo passaggio di "appiattimento" dei vettori di features, abbiamo de
 
 "audio\_features": {
 
-"breath\_duration": 13.793560090702949,
-
-"breath\_tempo": 129.19921875,
-
-"breath\_period": 7425.0,
-
-...
-
-"cough\_duration": 6.353560090702948,
-
-"cough\_tempo": 75.99954044117646,
-
-"cough\_period": 4674.0,
-
-...
+    "breath\_duration": 13.793560090702949,
+    
+    "breath\_tempo": 129.19921875,
+    
+    "breath\_period": 7425.0,
+    
+    ...
+    
+    "cough\_duration": 6.353560090702948,
+    
+    "cough\_tempo": 75.99954044117646,
+    
+    "cough\_period": 4674.0,
+    
+    ...
 
 }
 
@@ -667,9 +669,7 @@ Figura 14: **Threshold positivo all’90%** .
 |**LR**|∼38.88%|∼41.29%|∼35.18%|∼1.85%|
 |**SVM**|∼40.74.%|∼27.77%|∼31.48%|0%|
 
-Tabella 5: Valori percentuali per LR e SVM configurati con threshold positivo posto al
-
-90%.
+Tabella 5: Valori percentuali per LR e SVM configurati con threshold positivo posto al 90%.
 37
 
 *N.B.: È disponibile la raccolta completa di matrici di confusione alla fine del trattato.* Osserviamo che:
