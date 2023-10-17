@@ -1,10 +1,13 @@
-Alma Mater Studiorum - Università di Bologna       Dipartimento Informatica - Scienza e Ingegneria - DISI Laurea Magistrale in Informatica
+# Alma Mater Studiorum - Università di Bologna       
+## Dipartimento Informatica - Scienza e Ingegneria - DISI Laurea Magistrale in Informatica
+## Corso di Intelligenza Artificiale
 
-Corso di Intelligenza Artificiale
+### **Modelli di classificazione per la diagnostica della SARS-CoV-2 in un’ottica di ecosostenibilità**
 
-**Modelli di classificazione per la diagnostica della SARS-CoV-2 in un’ottica di ecosostenibilità**
-
-**Gabriele Fogu - 0001101637 - gabriele.fogu@studio.unibo.it Martina Daghia - 0001097932 - martina.daghia@studio.unibo.it Martina Zauli - 0001097933 - martina.zauli@studio.unibo.it Riccardo Spini - 0001084256 - riccardo.spini@studio.unibo.it**
+**Gabriele Fogu - 0001101637 - gabriele.fogu@studio.unibo.it 
+Riccardo Spini - 0001084256 - riccardo.spini@studio.unibo.it
+Martina Daghia - 0001097932 - martina.daghia@studio.unibo.it 
+Martina Zauli - 0001097933 - martina.zauli@studio.unibo.it**
 
 *17 ottobre 2023        Anno scolastico 2022-2023*
 
@@ -98,7 +101,7 @@ In primo luogo nella Tabella [1 descriviamo](#_page7_x85.04_y90.76) i componenti
 
 Nel capitolo [3 ](#_page12_x85.04_y87.53)vediamo uno studio [\[2\] ](#_page44_x85.04_y205.72)che dimostra come il trasporto sia un fattore di inquinamento molto influente, parliamo infatti di circa il 13*.*3% di gas ad effetto serra sul totale, circa il 20% della produzione di metalli pesanti, circa il 4% di agenti inquinanti scaricate nell’acqua e quasi il 25% di inquinanti atmosferici. Questi dati sono stati presi tenendo conto di un furgone rappresentativo con motore Diesel.
 
-Per sovvenire a tale problema i ricercatori hanno proposto la soluzione di utilizzare **fur- goni elettrici** . Abbiamo scelto come campione un furgone elettrico con un’autonomia
+Per sovvenire a tale problema i ricercatori hanno proposto la soluzione di utilizzare **furgoni elettrici** . Abbiamo scelto come campione un furgone elettrico con un’autonomia
 
 
 
@@ -121,7 +124,7 @@ dell’acido nucleico. [\[6\]](#_page44_x85.04_y459.36)
 
 di guida a pieno carico di 390 km e una capacità della batteria di 98*,*09 kWh, che ha un consumo energetico a pieno carico di 0*,*25 kWh/km in condizioni ideali a confronto dei 948*,*72 MJ/km di un furgone Diesel nelle stesse condizioni.
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.001.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/32121135-a5a8-495f-97ce-800f92c85ea5)
 
 <a name="_page8_x85.04_y153.53"></a>Figura 1: Distanza e tempo medio di trasporto dei kit di test molecolare per le province
 
@@ -129,7 +132,8 @@ di Beijing, Tianjin, Hebei.
 
 Nella figura [2 ](#_page8_x85.04_y376.49)possiamo notare quanto un furgone Diesel sia notevolmente più inquinante di un furgone elettrico tenendo conto della distanza media di trasporto per un singolo kit di test, riportata nella Figura 1.
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.002.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/cd22f522-f22b-49fb-a1c5-8623ce9557b7)
+
 
 <a name="_page8_x85.04_y376.49"></a>Figura 2: Confronto degli impatti ambientali tra il trasporto con furgoni diesel (DV) e
 
@@ -141,11 +145,12 @@ quello con furgoni elettrici (EV) per le province cinesi di Beijing, Tianjin, He
 
 ![ref1]
 
-<a name="_page9_x85.04_y80.31"></a>Figura 3: Riassunto della produzione del test NAAT
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/6179e968-e838-4cd3-b50f-2e9a287b0982)
+Figura 3: Riassunto della produzione del test NAAT
 
 Un primissimo approccio è quello di utilizzare un modello integrato di trattamento dei rifiuti con apparecchiature di incenerimento a microonde. In questo scenario, i rifiuti sanitari vengono prima sterilizzati e disinfettati mediante irradiazione a microonde assi- stita da riscaldamento a vapore, per poi essere inviati all’inceneritore. Sviluppando tale metodo modificheremo la Figura 3[ nella](#_page9_x85.04_y80.31) Figura 4[ che](#_page9_x85.04_y405.43) segue:
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/dd30a180-e156-4438-b322-4b6a73d47eac)
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.004.png)
 
 <a name="_page9_x85.04_y405.43"></a>Figura 4: Sistema integrato di trattamento dei rifiuti sanitari.
 
@@ -160,8 +165,7 @@ I tamponi nasofaringei sono strumenti di test invasivi, costosi e inquinanti. La
 3. **Descizione<a name="_page10_x85.04_y253.49"></a> del dataset**
 
 Nel giorno martedì 18 Aprile 2022 ci è stato inviato una cartella dal nome " **KDD\_paper\_data** " di grandezza 1.63 GB siffatta:
-
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.005.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/1828e98e-876b-4ce1-9e8c-10978282bdd1)
 
 Figura 5: Cartella iniziale contenente sottocartelle che includono gli audio.
 
@@ -195,11 +199,11 @@ Con l’intento di creare un’applicazione software per *mobile* abbiamo deciso
 
 Poiché è difficile ottenere informazioni accurate sulla distanza, il tempo e la modalità di trasporto per la consegna dei kit di test in tutto il mondo, consideriamo la Cina come caso di studio, per cui è più facile reperire dati ufficiali.
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.006.jpeg)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/11aa66c6-01bc-4983-bac4-3d4f8df03900)
 
 <a name="_page12_x85.04_y443.15"></a>Figura 6: Approccio "cradle-to-grave" dell’LCI di un tampone NAAT. [6]
 
-Partendo dalla Figura 6[ eseguiremo](#_page12_x85.04_y443.15) dei calcoli sull’impatto ambientale portato dai tam- <a name="_page12_x85.04_y789.53"></a>poni eseguiti in Cina.
+Partendo dalla Figura 6[ eseguiremo](#_page12_x85.04_y443.15) dei calcoli sull’impatto ambientale portato dai tamponi eseguiti in Cina.
 
 1. **Produzione del test kit**
 
@@ -212,9 +216,7 @@ Il kit di test fornisce i materiali chiave per i test diagnostici COVID-19, che 
 - Accessori come carta patinata, sacchetti sigillanti e tamponi faringei.
 2. **Trasporto**
 
-<a name="_page13_x85.04_y321.06"></a>In questo caso teniamo conto dei trasporti su strade nazionali cinesi il che implica che i kit di test vengono spediti direttamente dai produttori ai centri di test senza distribuzione
-
-e stoccaggio, altri modelli di consegna come gli aerei non sono considerati. I test devono essere tarsportati con una temperatura di -20°C, questo è possibile grazie all’ausilio di incubatori refrigeranti. Ad esempio: un furgone diesel rappresentativo (7,6m × 2,45m × 2,5m) a pieno carico potrebbe trasportare 208 incubatori e ogni incubatore può immagaz- zinare 264 kit di test.
+<a name="_page13_x85.04_y321.06"></a>In questo caso teniamo conto dei trasporti su strade nazionali cinesi il che implica che i kit di test vengono spediti direttamente dai produttori ai centri di test senza distribuzione e stoccaggio, altri modelli di consegna come gli aerei non sono considerati. I test devono essere tarsportati con una temperatura di -20°C, questo è possibile grazie all’ausilio di incubatori refrigeranti. Ad esempio: un furgone diesel rappresentativo (7,6m × 2,45m × 2,5m) a pieno carico potrebbe trasportare 208 incubatori e ogni incubatore può immagaz- zinare 264 kit di test.
 
 Un simile furgone diesel a pieno carico richiede 948,72 MJ per kilometro.
 
@@ -234,8 +236,7 @@ Dato che i rifiuti sanitari sono classificati come rifiuti pericolosi a causa de
 Nella pratica corrente, la disinfezione viene eseguita su tutti i rifiuti della diagnostica COVID-19 mediante disinfettanti al cloro seguiti da sterilizzazione a vapore ad alta tem- peratura [\[2\].](#_page44_x85.04_y205.72) In seguito avviene lo smaltimento in un inceneritore ad alta temperatura (850 – 1200 °C). Infine, il processo si conclude con lo scarico sicuro dei fumi dopo la tempra. Gli impatti ambientali del trasporto dei rifiuti sanitari, dai luoghi sanitari agli impianti di trattamento dei rifiuti, sono esclusi perché tali dati non sono disponibili e variano notevolmente.
 
 La Figura [7 ](#_page14_x85.04_y376.94)riassume i componenti principali e l’ampia gamma di ingredienti generati ed utilizzati per lo smaltimento dei kit di test [\[6\].](#_page44_x85.04_y459.36)
-
-![ref1]
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/7d51d955-73d5-4b4d-a633-06dab023bcb3)
 
 <a name="_page14_x85.04_y376.94"></a>Figura 7: Riassunto della produzione del test NAAT
 
@@ -243,27 +244,29 @@ La Figura [7 ](#_page14_x85.04_y376.94)riassume i componenti principali e l’am
 
 La Figura [9 ](#_page16_x85.04_y80.31)mostra la quantità di emissioni di gas a effetto serra e inquinanti per NAT COVID-19 e la Figura [10 ](#_page16_x85.04_y394.69)illustra una ripartizione dettagliata per ciascun processo per identificare i principali apporti negativi all’ambiente. Entrambe le figure sono state prese dal lavoro *["Potential Life-Cycle Environmental Impacts of the COVID-19 Nucleic Acid Test"*](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9469759/)* di Ling Ji, Yongyang Wang, Yulei Xie, Ming Xu, Yanpeng Cai, Shengnan Fu, Liang Ma, e Xin Su. [\[6\]](#_page44_x85.04_y459.36) **Le emissioni totali di gas serra (GHG) per test sono pari a 612,90g** (precisamente 92,7% *CO*2, 7,3% *CH*4). Riportiamo la tabella con i dati relativi alle emissioni per ogni test dell’elaborato precedentemente citato.
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.007.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/353f073d-69e1-468c-b09e-0d8634f45e57)
+
 
 Figura 8: Tabella con dati delle emissioni della Cina
 
-La Figura [9 ](#_page16_x85.04_y80.31)mostra che l’impatto del trattamento dei rifiutiè il più pronunciato con 71,3% delle emissioni di gas serra (435,63g *CO*2). Durante questo processo, i rifiuti sanitari (in particolare i puntali delle pipette) sono il principale inquinante responsabile di oltre il 60,0% di *CH*4. Un ulteriore 23,6% delle emissioni di GHG deriva dall’utilizzo di energia per la disinfezione e il trattamento a vapore dei rifiuti sanitari contagiosi. Seguiti dal trattamento dei rifiuti, la produzione e il trasporto dei kit di test contribuiscono rispetti- vamente al 14,5% e al 13,3% delle emissioni totali di gas a effetto serra. Nel processo di produzione del kit di test, il VTM ha più impatto rispetto ad altri componenti principali
+La Figura [9 ](#_page16_x85.04_y80.31)mostra che l’impatto del trattamento dei rifiutiè il più pronunciato con 71,3% delle emissioni di gas serra (435,63g *CO*2). Durante questo processo, i rifiuti sanitari (in particolare i puntali delle pipette) sono il principale inquinante responsabile di oltre il 60,0% di *CH*4. Un ulteriore 23,6% delle emissioni di GHG deriva dall’utilizzo di energia per la disinfezione e il trattamento a vapore dei rifiuti sanitari contagiosi. Seguiti dal trattamento dei rifiuti, la produzione e il trasporto dei kit di test contribuiscono rispetti- vamente al 14,5% e al 13,3% delle emissioni totali di gas a effetto serra. Nel processo di produzione del kit di test, il VTM ha più impatto rispetto ad altri componenti principali con 60,5g di *CO*2. Anche altri materiali ausiliari come canna di plastica (23,3 g *CO*2) e tamponi faringei (5,5g *CO*2) contribuiscono per il 32% alle emissioni di gas serra della produzione del kit di test.
 
-con 60,5g di *CO*2. Anche altri materiali ausiliari come canna di plastica (23,3 g *CO*2) e tamponi faringei (5,5g *CO*2) contribuiscono per il 32% alle emissioni di gas serra della produzione del kit di test.
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/26f46035-01b1-49d6-9b36-8970b745bac8)
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.008.jpeg)
 
 <a name="_page16_x85.04_y80.31"></a>Figura 9: Abbreviazioni: TK, produzione di kit di test; TP, trasporto; RE, estrazione
 
 dell’RNA; TE, test; e WT, trattamento dei rifiuti.
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.009.jpeg)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/22a23566-1a52-462e-82a8-65721576d815)
+
 
 <a name="_page16_x85.04_y394.69"></a>Figura 10: Ripartizione delle emissioni GHG e inquinanti per ciascun processo.
 
 Possiamo affermare che **la maggior parte dei GHG causati dalla produzione dei tamponi dell’acido nucleico (NAAT) sono originati da quello che è lo smalti- mento** di questi. L’impatto sul riscaldamento globale di tale processo è definito nell’isto- gramma [11.](#_page17_x85.04_y80.31)
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.010.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/4a87d7eb-c7c0-41e1-b6b4-24aca30ac153)
+
 
 <a name="_page17_x85.04_y80.31"></a>Figura 11: Abbreviazioni: TR\_RI, trattamento rifiuti; E\_RNA, processo di estrazione
 
@@ -338,9 +341,7 @@ Siamo stati guidati principalmente da un articolo [1][ pubblicato](#_page44_x85.
 
 La maggior parte delle features estratte restituisce delle serie temporali, poco adatte al nostro scopo.
 
-È stato dunque necessario elaborare ulteriormente tutte le features definite come se-
-
-rie temporali, ovvero: **RMSE** , **Spectral Centroid** , **Rolloff** , **Zero Crossing Rate** , **MFCC** / **MFCC** ∆/ **MFCC** ∆**2**.
+È stato dunque necessario elaborare ulteriormente tutte le features definite come serie temporali, ovvero: **RMSE**, **Spectral Centroid**, **Rolloff**, **Zero Crossing Rate**, **MFCC** / **MFCC** ∆/ **MFCC** ∆**2**.
 
 Per ognuna di queste serie sono stati estratti degli indicatori statistici. Nel caso delle varianti di MFCC, le quali erano descritte da vettori di vettori, abbiamo ottenuto dei vettori di oggetti contenenti suddetti indicatori statistici.
 
@@ -370,142 +371,113 @@ In sintesi, ogni audio è descritto da **4 valori scalari** , **11 indicatori st
 
 Fatto ciò è stato necessario eseguire un ultimo passaggio prima di poter effettivamente impiegare il dataset all’interno del nostro modello. A questo punto della sperimentazione, il nostro dataset descriveva ogni audio come segue, nel caso del respiro ad esempio:
 
-{
-
-"filename\_breath": "...", "covid": ..., "audio\_features": {
-
-...
-
-}
-
-}
+	{
+		"filename_breath": "...", 
+		"covid": ..., 
+		"audio_features": {
+			...
+		}
+	}
 
 Tuttavia, l’oggetto audio\_features non è ancora omogeneo in quanto costituito in parte da coppie chiave-scalare, in parte da coppie chiave-oggetto e in parte da coppie chiave-vettore dove ogni oggetto è costituito dagli 11 indicatori statistici e tali oggetti sono gli stessi che popolano i vettori.
 
 Le features di un audio sono quindi elementi di questo tipo:
 
-audio\_features: {
+	audio_features: {
+	    duration: scalar,
+	    ...,
+	    onset: scalar,
+	    rmse: {
+		    mean: scalar,
+		    
+		    ...,
+		    
+		    iqr: scalar
+		    
+	    },
+	    ...,
+	    zc: {...},
+	    mfcc: [
+	        {
+		        mean: scalar,
+		        ...
+		        iqr: scalar
+	        }, 
+	        ...,
+	        {
+		        mean: scalar, 
+		        ...,
+		        iqr: scalar
+	        }
+	    ],
+	    mfcc_d: [
+	        ...
+	    ], mfcc_d2: [
+	        ...
+	    ]
 
-    duration: scalar,
-    
-    ...,
-    
-    onset: scalar,
-    
-    rmse: {
-    
-    mean: scalar,
-    
-    ...,
-    
-    iqr: scalar
-    
-    },
-    
-    ...,
-    
-    zc: {...},
-    
-    mfcc: [
-    
-        {
-        
-        mean: scalar,
-        
-        ...
-        
-        iqr: scalar
-        
-        }, ..., {
-        
-        mean: scalar, ...,
-        
-        iqr: scalar
-        
-        }
-    
-    ],
-    
-    mfcc\_d: [
-    
-        ...
-    
-    ], mfcc\_d2: [
-    
-        ...
-    
-    ]
-
-}
+	}
 
 Per semplicità di presentazione, le features e gli indicatori sono stati disposti nell’ordine con cui sono stati presentati durante questo trattato e l’oggetto appena descritto è da intendersi parziale e da completare con le restanti features/indicatori statistici.
 
 La soluzione che abbiamo impiegato per uniformare i nostri oggetti all’interno del dataset consiste in un "appiattimento" degli oggetti e dei vettori tramite la seguente logica:
 
-- Le coppie chiave-oggetto rmse: {
+- Le coppie chiave-oggetto rmse:
+```
+{
 
     "mean": scalar, ...,
     
         "iqr": scalar
     
     }
+```
   diventano
     
-    "rmse\_mean": scalar, ...
-    
-    "rmse\_iqr": scalar,
+    "rmse_mean": scalar, 
+    ...,
+    "rmse_iqr": scalar,
+
 
 - Le coppie chiave-vettore, come il vettore mfcc formato da 13 elementi:
-
+```
 mfcc: [
 
     {
-    
-        "mean": scalar, ...,
-        
+        "mean": scalar, 
+        ...,
         "iqr": scalar,
-    
     }
-
-]       
+]     
+```
 diventano:
+```
 
-"mfcc\_0\_mean": scalar, ...
+"mfcc_0_mean": scalar, 
+...,
+"mfcc_0_iqr": scalar,
+...,
+"mfcc_12_mean": scalar,
+...,
+"mfcc_12_iqr": scalar
+```
+Ultimato questo passaggio di "appiattimento" dei vettori di features, abbiamo deciso di unire i due file appartententi ad ogni campione in un unico vettore di features, anteponendo le *keyword* **"breath_"** e **"cough_"** a tutte le features degli audio. Ottenendo degli oggetti come questo:
+```
 
-"mfcc\_0\_iqr": scalar,
-
-...
-
-"mfcc\_12\_mean": scalar,
-
-...
-
-"mfcc\_12\_iqr": scalar
-
-Ultimato questo passaggio di "appiattimento" dei vettori di features, abbiamo deciso di unire i due file appartententi ad ogni campione in un unico vettore di features, antepo- nendo le *keyword* "breath\_" e "cough\_" a tutte le features degli audio. Ottenendo degli oggetti come questo:
-
-"filename\_breath": "breaths\_0c4dx8rU5G\_1586982341272.wav", "filename\_cough": "cough\_0c4dx8rU5G\_1586982341281.wav", "covid": 1,
-
-"audio\_features": {
-
-    "breath\_duration": 13.793560090702949,
-    
-    "breath\_tempo": 129.19921875,
-    
-    "breath\_period": 7425.0,
-    
+"filename_breath": "breaths_0c4dx8rU5G_1586982341272.wav", 
+"filename_cough": "cough_0c4dx8rU5G_1586982341281.wav", 
+"covid": 1,
+"audio_features": {
+    "breath_duration": 13.793560090702949,
+    "breath_tempo": 129.19921875,
+    "breath_period": 7425.0,
     ...
-    
-    "cough\_duration": 6.353560090702948,
-    
-    "cough\_tempo": 75.99954044117646,
-    
-    "cough\_period": 4674.0,
-    
+    "cough_duration": 6.353560090702948,
+    "cough_tempo": 75.99954044117646,
+    "cough_period": 4674.0,
     ...
-
 }
-
+```
 L’estrazione delle features, la loro organizzazione eterogenea all’interno di un dizionario e la successiva trasformazione delle features non scalari sono tutte operazioni che all’interno del codice vengono eseguite in un modulo dedicato: load\_dataset.py, il quale deve essere eseguito solo in fase di compilazione. Fatto ciò, finalmente i nostri audio sono descritti da 477 valori scalari organizzati uniformemente come valori all’interno di un oggetto *dictionary-like* come coppie chiave-valore e possiamo passare all’impiego del dataset, risultante dall’unione di audio di tosse ed audio di respiro per ogni utente, per l’effettivo training del modello.
 
 4. **Training<a name="_page26_x85.04_y640.34"></a> del modello e misurazione delle performance**
@@ -589,17 +561,23 @@ Di seguito riportati **i boxplot delle migliori 6 features del dataset** in rela
 
 nel rettangolo centrale, il primo quartile (25%) come limite inferiore del rettangolo, il terzo quartile (75%) come limite superiore del rettangolo e i valori minimi e massimi come linee esterne (whisker). Questa visualizzazione permette di confrontare le distribuzioni delle feature per diverse categorie della target, evidenziando eventuali differenze o pattern.
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.011.png) ![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.012.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/90605210-2c6e-4e60-b56e-ba87e53f28ef)
+a) cough\_mfcc\_0\_max
 
-(a) cough\_mfcc\_0\_max (b) breath\_mfcc\_d\_2\_root\_mean\_sqr
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/8b688175-2ac7-4acb-862a-cb51589db889)
+b) breath\_mfcc\_d\_2\_root\_mean\_sqr
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.013.png) ![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.014.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/2d02fd64-7f16-47d4-b773-092263f21066)
+c) breath\_mfcc\_d\_2\_std\_dev 
 
-(c) breath\_mfcc\_d\_2\_std\_dev (d) cough\_sc\_perc\_75
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/31628b15-d2c5-47e9-8272-cd66abc0cc39)
+d) cough\_sc\_perc\_75
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.015.png) ![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.016.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/f3888e1e-9d63-4aed-8ec7-e7a9bed39070)
+e) breath\_mfcc\_8\_perc25 
 
-(e) breath\_mfcc\_8\_perc25 (f) breath\_mfcc\_0\_perc25
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/7ed9667d-39a8-43d2-afd9-fc5351f42029)
+f) breath\_mfcc\_0\_perc25
 
 *N.B.: È disponibile la raccolta completa di matrici di confusione alla fine del trattato.*
 
@@ -615,13 +593,10 @@ Ricordiamo infatti che la precisione è definita come:
 
 ed indica il rapporto fra predizioni positive corrette e predizioni positive totali effettuate. Procediamo a modificare il threshold in modo da ottenere meno falsi negativi possibili. Procedendo per logica, un comportamento adatto al contesto sarebbe quello di valuta- re un caso come negativo solo se si ha una certezza che esso lo sia davvero di almeno l’80%.
 
-***Def.***:![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.017.png)
-
+***Def.***:
 *Threshold Positivo = X%* =⇒ *L’elemento rientra nella categoria covid se ci appartiene con una probabilità superiore o uguale all’ X%.![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.018.png)*
 
 Partendo da questa base, vediamo come si comportano le matrici di confusione quando si va a modificare il valore di threshold positivo. Ricordiamoci che **0** sta per **Non Covid** mentre **1** significa che **Ha il Covid** , come mostrato nella tabella sottostante. Il numero di campioni nel **Test Set** è **54**.
-
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.019.png) ![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.020.png)
 
 (g) Matrice di confusione per LR (h) Matrice di confusione per SVM
 
@@ -639,9 +614,11 @@ Tabella 3: Valori percentuali per LR e SVM configurati con threshold positivo al
 70%.
 36
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.021.png) ![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.022.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/85022482-1e34-4224-a2af-e0596a3078be)
+(a) Matrice di confusione per LR
 
-(a) Matrice di confusione per LR (b) Matrice di confusione per SVM
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/0870789f-144b-4291-9150-908a5951d147)
+(b) Matrice di confusione per SVM
 
 Figura 13: **Threshold positivo all’80%** .
 
@@ -656,9 +633,11 @@ Tabella 4: Valori percentuali per LR e SVM configurati con threshold positivo po
 
 all’80%.
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.023.png) ![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.024.png)
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/f96164cf-5f8b-4975-ad46-b3f6f05e7089)
+(a) Matrice di confusione per LR 
 
-(a) Matrice di confusione per LR (b) Matrice di confusione per SVM
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/3dcc88b7-7266-4b60-be47-78ba2eaf06bd)
+(b) Matrice di confusione per SVM
 
 Figura 14: **Threshold positivo all’90%** .
 
@@ -673,17 +652,8 @@ Tabella 5: Valori percentuali per LR e SVM configurati con threshold positivo po
 37
 
 *N.B.: È disponibile la raccolta completa di matrici di confusione alla fine del trattato.* Osserviamo che:
-
-
-
-
-- **Falsi Negativi** alla Threshold;
-- **Falsi Positivi** alla Threshold.
-
-e **Veri Negativi** e **Veri Positivi**
-
-sono in rapporto **direttamente proporzionale** sono in rapporto **inversamente proporzionale**
-
+- **Falsi Negativi** sono in rapporto **direttamente proporzionale** alla Threshold;
+- **Falsi Positivi** sono in rapporto **inversamente proporzionale** alla Threshold.
 
 38
 
@@ -703,9 +673,7 @@ Tabella 6: Valori delle metriche di misurazione delle performance al variare del
 
 configurazioni per LR.
 
-Vogliamo recall alta nella classificazione *covid* limitando il tradeoff sulla precisione, per far si che vengano commessi il minor numero possibile di errori sui falsi negativi, mante- nendo comunque bassi gli errori sui falsi positivi, **in modo tale che l’applicazione dia la priorità a non sbagliare sull’identificazione dei positivi, pur non restituendo**
-
-**troppi falsi allarmi e rimanga quindi affidabile** .
+Vogliamo recall alta nella classificazione *covid* limitando il tradeoff sulla precisione, per far si che vengano commessi il minor numero possibile di errori sui falsi negativi, mante- nendo comunque bassi gli errori sui falsi positivi, **in modo tale che l’applicazione dia la priorità a non sbagliare sull’identificazione dei positivi, pur non restituendo troppi falsi allarmi e rimanga quindi affidabile** .
 
 
 
@@ -740,8 +708,7 @@ Alla luce dei nostri risultati possiamo mettere ora a parargone gli esiti del no
 
 attraverso ad un metodo promosso dall’Università di Cambridge riassunto in questa pipeline [\[10](#_page44_x85.04_y626.98)]:
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.025.png)
-
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/77399a83-e900-41f8-9b76-9f641c421a00)
 Figura 15: Pipeline per il modello utilizzato da Brown e il suo team di ricerca.
 
 In questo studio, hanno diviso il dataset per raggiungere l’obbiettivo di ogni task nella seguente suddivisione:
@@ -755,13 +722,10 @@ Nel nostro elaborato invece come visto nel paragrafo [2.3 la](#_page10_x85.04_y2
 La nostra **task** ( differente da quella dello studio di Brown) tratta uno studio sull’eco- sostenibilità del nostro algoritmo e sull’implementazione di un applicazione mobile che possa rimpiazzare i tamponi, non sulla sua riuscita effettiva in termini di precisione e performance.
 
 In seguito metteremo quindi a paragone i risultati dei due studi:
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/bc9b3d8a-2ab4-43a5-be5d-464ff21a8817)
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.026.png)
 
 Figura 16: Risultati dello studio di Brown per ogni task. [1]
-
-
-
 <table><tr><th colspan="1" valign="top"><b>Task</b></th><th colspan="1" valign="top"><b>Modalità</b></th><th colspan="1" valign="top"><b>Esempi(utenti)</b></th><th colspan="1" valign="top"><b>Modelli</b></th><th colspan="1" valign="top"><b>Precision</b></th><th colspan="1" valign="top"><b>Recall</b></th><th colspan="1" valign="top"><b>F1-Score</b></th></tr>
 <tr><td colspan="1" rowspan="3" valign="top"><p>Predirre Covid</p><p>da Audio Android</p></td><td colspan="1" rowspan="3" valign="top">C+B</td><td colspan="1" rowspan="3" valign="top">158(0)/110(1)= 268</td><td colspan="1" valign="top"><i>LR</i></td><td colspan="1" valign="top">66%</td><td colspan="1" valign="top">88%</td><td colspan="1" valign="top">75%</td></tr>
 <tr><td colspan="4"></td></tr>
@@ -831,45 +795,32 @@ ovvero:
 Abbiamo impiegato la libreria *[CodeCarbon.io*,](https://codecarbon.io/)* libreria creata specificatamente per misu- rare le emissioni di *CO*2 degli algoritmi di Machine Learning. Abbiamo quindi eseguito l’algoritmo SVM con il test\_set da 54 elementi con la sua configurazione migliore e ne abbiamo calcolarto i consumi in termini ambientali.
 
 Il report generato dalla libreria è riassumibile nei seguenti dati:
-
+```
 EmissionsData(
+	... 
+	run_id=’c64854b3-5f23-4b8f-b0f5-b495c5cbc1cf’, 
+	duration=0.07477235794067383, 
+	emissions=3.374447892963441e-07, 
+	emissions_rate=4.5129617226205555e-06,
+	...
+	energy_consumed=1.4918247418006688e-06, 
+	country_name=’Italy’,
+	...
+)
+```
+CO~2~ **LCI di un tampone NAAT**≈612, 90~g~
+CO~2~ **di un ciclo di test di SVM**≈ 0, 625 ·10^−2^~g~
 
-... run\_id=’c64854b3-5f23-4b8f-b0f5-b495c5cbc1cf’, duration=0.07477235794067383, emissions=3.374447892963441e-07, emissions\_rate=4.5129617226205555e-06,
 
-...
-
-energy\_consumed=1.4918247418006688e-06, country\_name=’Italy’,
-
-...
-
-|<p>
-    CO **LCI di un tampone NAAT**</p><p>
-    2</p>|<p>
-    CO **di un ciclo di test di SVM**</p><p>
-    2</p>|
-| - | - |
-|
-    612, 90g|<p>
-    0, 625 ·10−**2**</p><p>
-    g</p>|
-
-[^1])
-
-We apply an energy mix of 226 g.CO2eq/kWh for Italy
+Applichiamo 226~g~ di CO~2~eq/kWh per l`Italia
 
 Per eseguire la classificazionedi 54 elementi sono stati emesse 3.374447892963441·10−**7 tonnellate di** CO 2. Inoltre la libreria ci informa che per misurare questa quantità è stata assunto che in Italia venga utilizzato un mix energetico con una intensità di carbonio pari a **226 grammi di** *CO*2 equivalente emessa per ogni kilowattora (kWh) di energia prodotta.
 
-Il campo emissions\\_rate indica l’emissione media generata dal codice al secondo in tonnellate di *CO*2 equivalenti.
+Il campo emissions_rate indica l’emissione media generata dal codice al secondo in tonnellate di *CO*2 equivalenti.
 
 Il nostro algoritmo **per singolo test** avrà un emissione di *CO*2 in grammi pari a:
 
-3*,*374447892963441·10*T* ≈ 0*,*37445 =
-
-−7
-
-1000000* [^2]
-
-= 0*,* 3744554 *g* ≈ 0*,* 37445*g* ≈ 0.625 · 10−g **2**
+3,374447892963441·10~T~^−7^/1000000 ≈ 0,37445g/54 ≈ 0.00693425925g
 
 In conclusione possiamo osservare come sia evidente che il nostro algoritmo abbia un impatto sensibilmente minore a livello ambientale prendendo in considerazione i dati del capitolo [3.](#_page12_x85.04_y87.53)
 
@@ -883,9 +834,7 @@ L’applicazione non dovrà essere sostituitiva dei tamponi molecolari bensì vo
 
 I dati estratti dalle analisi che abbiamo eseguito, ci confermano che **un tampone mo- lecolare dell’acido nucleico NAAT** (secondo il modello "*cradle-to-grave*") **rilascia nell’atmosferma circa** 612*.*90*g* **di gas serra contro i 0.** 00625*g* **di GHG per ogni test del nostro algoritmo** .
 
-Nonostante questo dato fattuale, non converrebbe sostituire il tampone NAAT al nostro algoritmo in quanto, quest’ultimo nella sua configurazione migliore, rileva i veri positivi
-
-e i veri negativi con un accuratezza del 40*,*74% e 27*.*77%, bensì rileva i falsi negativi con una accuratezza del 100% con il fine di non espandere l’epidemia se si dovesse ripresentare di<a name="_page42_x85.04_y674.78"></a> nuovo.
+Nonostante questo dato fattuale, non converrebbe sostituire il tampone NAAT al nostro algoritmo in quanto, quest’ultimo nella sua configurazione migliore, rileva i veri positivi e i veri negativi con un accuratezza del 40*,*74% e 27*.*77%, bensì rileva i falsi negativi con una accuratezza del 100% con il fine di non espandere l’epidemia se si dovesse ripresentare di<a name="_page42_x85.04_y674.78"></a> nuovo.
 
 **7.1 Progetti futuri**
 
@@ -912,68 +861,50 @@ Sarà di fondamentale importanza **addestrare i modelli** aumentando il numero d
 
 **Matrici di confusione Logistic Regression**
 
-**Matrice di confusione per LR con threshold![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.027.png)**
+**Matrice di confusione per LR con threshold positivo posto all’70%** .
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/1593f30b-e370-4d3d-8ac8-ad4120405f2c)
 
-**positivo posto all’70%** .
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.028.png)
+**Matrice di confusione per LR con threshold positivo posto all’80%** .
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/a04986c8-7236-47fc-bf57-12d7f1ef132d)
 
-**Matrice di confusione per LR con threshold![ref2]**
 
-**positivo posto all’80%** .
+**Matrice di confusione per LR con threshold positivo posto all’90%** .
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/9368d3bf-15ee-4dfb-b044-edce24abb2af)
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.030.png)
-
-**Matrice di confusione per LR con threshold![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.031.png)**
-
-**positivo posto all’90%** .
-
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.032.png)
 
 **Support Vector Machine**
 
-**Matrice di confusione per SVM con threshold![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.033.png)**
+**Matrice di confusione per SVM con threshold*positivo posto all’70%** .
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/2dd5e9f1-0b1c-43ad-a544-bd97566e4a85)
 
-**positivo posto all’70%** .
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.034.png)
+**Matrice di confusione per SVM con threshold positivo posto all’80%** .
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/737f2cfc-50e8-4fd6-9c5a-0c6c999dcec7)
 
-**Matrice di confusione per SVM con threshold![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.035.png)**
 
-**positivo posto all’80%** .
+**Matrice di confusione per SVM con threshold positivo posto all’90%** .
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/4a2795d0-955d-47fe-b10b-430167b50b01)
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.036.png)
-
-<a name="_page48_x85.04_y80.31"></a>**Matrice di confusione per SVM con threshold![ref2]**
-
-**positivo posto all’90%** .
-
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.037.png)
 
 **Boxplots**
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.038.png)
-
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/228e99e4-d317-4195-baed-ea66932dbb70)
 Figura 17: Box Plot per la feature **cough\_mfcc\_0\_max**
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.039.png)
-
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/43fb1992-d34e-4b99-8567-220c656b2466)
 Figura 18: Box Plot per la feature **breath\_mfcc\_d\_2\_root\_mean\_sqr**
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.040.png)
-
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/2aa40ca1-3e72-46b8-88e6-1e2de01f98d8)
 Figura 19: Box Plot per la feature **breath\_mfcc\_d\_2\_std\_dev**
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.041.png)
-
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/ce10c2db-9ede-46b5-827d-f9c99368de57)
 Figura 20: Box Plot per la feature **cough\_sc\_perc\_75**
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.042.png)
-
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/8dba6ad3-c9cb-40ed-8d48-aaf58b845b2f)
 Figura 21: Box Plot per la feature **cough\_mfcc\_8\_perc25**
 
-![](Aspose.Words.410d46e6-d804-4e10-8537-f37c2c40f9ad.043.png)
-
+![image](https://github.com/martinadaghia10/ProgettoAI/assets/48244202/98dc3c7f-d0e6-4a17-9a06-bbb368d5b8e4)
 Figura 22: Box Plot per la feature **cough\_mfcc\_0\_max**
 
 [^1]: 
