@@ -4,7 +4,7 @@
 
 ### **Modelli di classificazione per la diagnostica della SARS-CoV-2 in un’ottica di ecosostenibilità**
 
-**Gabriele Fogu - 0001101637 - gabriele.fogu@studio.unibo.it 
+**Gabriele Fogu - 0001101637 - gabriele.fogu@studio.unibo.it
 Riccardo Spini - 0001084256 - riccardo.spini@studio.unibo.it
 Martina Daghia - 0001097932 - martina.daghia@studio.unibo.it 
 Martina Zauli - 0001097933 - martina.zauli@studio.unibo.it**
