@@ -9,7 +9,7 @@ Laurea Magistrale in Informatica
 ## Voto
 29/30
 
-## Partecipanti
+## Partecipanti - Medical_GRM
 - Gabriele Fogu 
 - Riccardo Spini 
 - Martina Daghia 
